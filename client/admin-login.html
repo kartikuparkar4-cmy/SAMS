@@ -1,0 +1,36 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="theme-color" content="#12324a">
+    <meta name="description" content="Secure Northstar Medical staff sign in.">
+    <title>Staff sign in | Northstar Medical</title>
+    <link rel="stylesheet" href="/css/style.css">
+    <script src="/js/common.js" defer></script>
+    <script src="/js/auth.js" defer></script>
+  </head>
+  <body class="login-page">
+    <main class="login-shell">
+      <section class="login-art" aria-label="Northstar Medical staff portal">
+        <a class="brand brand-inverse" href="/" aria-label="Northstar Medical home"><span class="brand-mark" aria-hidden="true">N</span><span><strong>Northstar</strong><small>MEDICAL CENTER</small></span></a>
+        <div class="login-art-copy"><p class="eyebrow eyebrow-light"><span class="eyebrow-line"></span> STAFF PORTAL</p><h1>Good care is<br>a team effort.</h1><p>Welcome back. Sign in to coordinate appointments and support our patients.</p></div>
+        <div class="login-art-footer"><span>SECURE ADMINISTRATOR ACCESS</span><span>Northstar Medical · Staff</span></div>
+      </section>
+      <section class="login-form-side">
+        <a class="back-link" href="/">← <span>Back to public site</span></a>
+        <div class="login-form-wrap"><p class="eyebrow"><span class="eyebrow-line"></span> WELCOME BACK</p><h2>Staff sign in</h2><p class="login-lede">Use your administrator account to continue.</p>
+          <form id="login-form" novalidate>
+            <div class="field"><label for="email">Email address</label><input id="email" name="email" type="email" autocomplete="username" maxlength="254" required></div>
+            <div class="field"><label for="password">Password</label><input id="password" name="password" type="password" autocomplete="current-password" maxlength="128" required></div>
+            <p class="form-message" id="login-message" role="alert" aria-live="assertive"></p>
+            <button class="button button-primary submit-button" id="login-submit" type="submit">Sign in <span aria-hidden="true">↗</span></button>
+          </form>
+          <p class="login-security"><span aria-hidden="true">◈</span> Protected access for authorized staff only.</p>
+        </div>
+        <p class="login-legal">Need access? Contact your system administrator.</p>
+      </section>
+    </main>
+    <div class="toast-region" id="toast-region" aria-live="polite" aria-atomic="true"></div>
+  </body>
+</html>

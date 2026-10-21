@@ -1,0 +1,54 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="theme-color" content="#12324a">
+    <meta name="description" content="Request an appointment with a Northstar Medical provider.">
+    <title>Book an appointment | Northstar Medical</title>
+    <link rel="stylesheet" href="/css/style.css">
+    <script src="/js/common.js" defer></script>
+    <script src="/js/booking.js" defer></script>
+  </head>
+  <body class="page-interior">
+    <header class="site-header">
+      <a class="brand" href="/" aria-label="Northstar Medical home"><span class="brand-mark" aria-hidden="true">N</span><span><strong>Northstar</strong><small>MEDICAL CENTER</small></span></a>
+      <nav class="site-nav" aria-label="Main navigation"><a href="/#care">Our care</a><a href="/#providers">Care team</a><a href="/#check-booking">Check a booking</a></nav>
+      <div class="header-actions"><a class="text-link admin-link" href="/admin-login.html">Staff sign in</a><a class="button button-primary button-small" href="/book.html" aria-current="page">Book an appointment <span aria-hidden="true">↗</span></a></div>
+      <button class="menu-toggle" type="button" aria-label="Open navigation" aria-expanded="false"><span></span><span></span></button>
+    </header>
+    <main class="booking-page section-shell">
+      <div class="page-intro"><p class="eyebrow"><span class="eyebrow-line"></span> A GOOD FIRST STEP</p><h1>Book your appointment</h1><p>Choose a provider and a time. We’ll take it from there.</p></div>
+      <div class="booking-layout">
+        <section class="form-panel" aria-labelledby="booking-title">
+          <div class="panel-topline"><span class="step-number">01</span><div><h2 id="booking-title">Your appointment details</h2><p>Fields marked <span aria-hidden="true">*</span> are required.</p></div></div>
+          <form id="booking-form" novalidate>
+            <div class="form-grid">
+              <div class="field field-wide"><label for="customer-name">Your name <span>*</span></label><input id="customer-name" name="customerName" type="text" autocomplete="name" minlength="2" maxlength="80" required><small class="field-error" data-error-for="customerName"></small></div>
+              <div class="field field-wide"><label for="contact-number">Contact number <span>*</span></label><input id="contact-number" name="contactNumber" type="tel" autocomplete="tel" inputmode="tel" placeholder="e.g. +1 555 010 2040" maxlength="24" required><small class="field-hint">Used only if we need to contact you about this booking.</small><small class="field-error" data-error-for="contactNumber"></small></div>
+             
+                 <div class="field"><label for="provider">Doctor <span>*</span></label><select id="provider" name="providerId" required><option value="">Choose a doctor</option></select><small class="field-error" data-error-for="providerId"></small></div>
+
+              <div class="field"><label for="service">Treatment <span>*</span></label><select id="service" name="serviceName" required><option value="">Choose a treatment</option></select><small class="field-error" data-error-for="serviceName"></small></div>
+              <div class="field"><label for="appointment-date">Date <span>*</span></label><input id="appointment-date" name="appointmentDate" type="date" required><small class="field-error" data-error-for="appointmentDate"></small></div>
+              <div class="field"><label for="time-slot">Available time <span>*</span></label><select id="time-slot" name="timeSlot" required disabled><option value="">Select a provider and date first</option></select><small class="field-error" data-error-for="timeSlot"></small></div>
+              <div class="field field-wide"><label for="booking-notes">Anything we should know? <span class="optional">Optional</span></label><textarea id="booking-notes" name="notes" rows="3" maxlength="500" placeholder="A short scheduling note (please do not include medical history)"></textarea><small class="field-hint">Please don’t include medical or other sensitive information.</small><small class="field-error" data-error-for="notes"></small></div>
+            </div>
+            <p class="form-message" id="booking-message" role="status" aria-live="polite"></p>
+            <button class="button button-primary submit-button" id="booking-submit" type="submit">Request appointment <span aria-hidden="true">↗</span></button>
+            <p class="privacy-note"><span aria-hidden="true">◈</span> Your details are used only to manage this appointment request.</p>
+          </form>
+          <section class="confirmation-panel" id="booking-confirmation" aria-live="polite" hidden>
+            <span class="confirmation-mark" aria-hidden="true">✓</span><p class="eyebrow"><span class="eyebrow-line"></span> REQUEST RECEIVED</p><h2>We’ve saved your place.</h2><p>Your appointment is pending confirmation. Keep this reference to check its status.</p><div class="reference-box"><span>BOOKING REFERENCE</span><strong id="confirmation-reference"></strong><button class="copy-button" id="copy-reference" type="button" aria-label="Copy booking reference" title="Copy reference">Copy</button></div><a class="button button-quiet" href="/">Back to home <span aria-hidden="true">↗</span></a>
+          </section>
+        </section>
+        <aside class="booking-aside">
+          <div class="aside-image"><img src="https://images.unsplash.com/photo-1576091160399-112ba8d25d1d?auto=format&fit=crop&w=900&q=85" alt="A calm, bright healthcare consultation room" loading="lazy"><span class="image-tag"><span class="status-dot"></span> HERE WHEN YOU NEED US</span></div>
+          <div class="aside-details"><p class="eyebrow"><span class="eyebrow-line"></span> WHAT TO EXPECT</p><h2>A simple request.<br>A thoughtful response.</h2><ol class="expect-list"><li><span>01</span><p>Choose a provider and an available time.</p></li><li><span>02</span><p>We’ll review your appointment request.</p></li><li><span>03</span><p>Check your reference for the latest status.</p></li></ol><p class="aside-hours"><strong>Clinic hours</strong><span>Monday–Friday · 8am–6pm</span></p></div>
+        </aside>
+      </div>
+    </main>
+    <footer class="site-footer"><a class="brand brand-footer" href="/" aria-label="Northstar Medical home"><span class="brand-mark" aria-hidden="true">N</span><span><strong>Northstar</strong><small>MEDICAL CENTER</small></span></a><p>Good health is a team effort.</p><div class="footer-meta"><span>Appointments · Mon–Fri, 8am–6pm</span><a href="/admin-login.html">Staff portal</a><span>© <span data-current-year></span> Northstar Medical</span></div></footer>
+    <div class="toast-region" id="toast-region" aria-live="polite" aria-atomic="true"></div>
+  </body>
+</html>

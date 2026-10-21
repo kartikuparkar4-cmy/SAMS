@@ -1,0 +1,11 @@
+# BOB workspace memory
+.bob/
+
+# Secrets and local state
+.env
+.env.*
+!.env.example
+node_modules/
+coverage/
+npm-debug.log*
+*.log

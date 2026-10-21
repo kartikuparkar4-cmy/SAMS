@@ -1,0 +1,85 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="theme-color" content="#12324a">
+    <meta name="description" content="Book a visit with Northstar Medical's care team. Simple, secure appointment scheduling.">
+    <title>Northstar Medical | Appointments made clear</title>
+    <link rel="stylesheet" href="/css/style.css">
+    <script src="/js/common.js" defer></script>  
+    <script src="/js/public.js" defer></script>
+  </head>
+  <body>
+    <header class="site-header">
+      <a class="brand" href="/" aria-label="Northstar Medical home">
+        <span class="brand-mark" aria-hidden="true">N</span>
+        <span><strong>Northstar</strong><small>MEDICAL CENTER</small></span>
+      </a>
+      <nav class="site-nav" aria-label="Main navigation">
+        <a href="#care">Our care</a>
+        <a href="#providers">Care team</a>
+        <a href="#check-booking">Check a booking</a>
+      </nav>
+      <div class="header-actions">
+        <a class="text-link admin-link" href="/admin-login.html">Staff sign in</a>
+        <a class="button button-primary button-small" href="/book.html">Book an appointment <span aria-hidden="true">↗</span></a>
+      </div>
+      <button class="menu-toggle" type="button" aria-label="Open navigation" aria-expanded="false"><span></span><span></span></button>
+    </header>
+
+    <main>
+      <section class="hero">
+        <div class="hero-copy">
+          <p class="eyebrow"><span class="eyebrow-line"></span> NORTHSTAR MEDICAL CENTER</p>
+          <h1>Care, without<br>the waiting room.</h1>
+          <p class="hero-intro">Find the right specialist and book a time that works for you. Thoughtful care starts with a simpler first step.</p>
+          <div class="hero-actions">
+            <a class="button button-primary" href="/book.html">Book an appointment <span aria-hidden="true">↗</span></a>
+            <a class="button button-quiet" href="#providers">Meet our care team <span aria-hidden="true">↓</span></a>
+          </div>
+          <div class="hero-note"><span class="status-dot"></span><span>Appointments available this week</span><span class="note-divider"></span><span>Mon–Fri, 8am–6pm</span></div>
+        </div>
+        <div class="hero-visual">
+          <img src="https://images.unsplash.com/photo-1559839734-2b71ea197ec2?auto=format&fit=crop&w=1000&q=85" alt="A physician ready to welcome a patient" fetchpriority="high">
+          <div class="image-caption"><span class="caption-icon" aria-hidden="true">+</span><span><strong>Care that sees you</strong><small>People first. Always.</small></span></div>
+          <div class="hero-index"><span>01</span><span class="index-rule"></span><span>04</span></div>
+        </div>
+        <div class="hero-side-label" aria-hidden="true">YOUR HEALTH, IN GOOD HANDS</div>
+      </section>
+
+      <section class="service-band" id="care" aria-label="Care specialties">
+        <div class="section-kicker"><span>01</span><span>OUR CARE</span></div>
+        <div class="service-band-title"><h2>Good care starts<br>with the right team.</h2><p>From everyday check-ins to specialist advice, find the support you need.</p></div>
+        <div class="service-list" id="service-list"><p class="muted">Loading care services…</p></div>
+      </section>
+
+      <section class="providers-section section-shell" id="providers">
+        <div class="section-heading">
+          <div><p class="eyebrow"><span class="eyebrow-line"></span> THE PEOPLE BEHIND YOUR CARE</p><h2>Meet your care team</h2></div>
+          <a class="text-link arrow-link" href="/book.html">View availability <span aria-hidden="true">↗</span></a>
+        </div>
+        <div class="provider-grid" id="provider-list" aria-live="polite"><p class="muted">Loading our providers…</p></div>
+      </section>
+
+      <section class="booking-check" id="check-booking">
+        <div class="booking-check-inner">
+          <div><p class="eyebrow eyebrow-light"><span class="eyebrow-line"></span> ALREADY BOOKED?</p><h2>Your appointment,<br>at a glance.</h2><p>Enter your booking reference to check its current status.</p></div>
+          <form class="status-form" id="status-form">
+            <label for="status-reference">Booking reference</label>
+            <div class="input-with-button"><input id="status-reference" name="reference" type="text" placeholder="e.g. NS-4F8A2C1B" autocomplete="off" maxlength="24" required><button class="button button-light" type="submit">Check status <span aria-hidden="true">↗</span></button></div>
+            <p class="form-message" id="status-message" role="status" aria-live="polite"></p>
+            <div class="status-result" id="status-result" hidden></div>
+          </form>
+        </div>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <a class="brand brand-footer" href="/" aria-label="Northstar Medical home"><span class="brand-mark" aria-hidden="true">N</span><span><strong>Northstar</strong><small>MEDICAL CENTER</small></span></a>
+      <p>Good health is a team effort.</p>
+      <div class="footer-meta"><span>Appointments · Mon–Fri, 8am–6pm</span><a href="/admin-login.html">Staff portal</a><span>© <span data-current-year></span> Northstar Medical</span></div>
+    </footer>
+    <div class="toast-region" id="toast-region" aria-live="polite" aria-atomic="true"></div>
+  </body>
+</html>

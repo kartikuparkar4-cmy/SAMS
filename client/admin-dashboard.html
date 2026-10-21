@@ -1,0 +1,45 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="theme-color" content="#12324a">
+    <meta name="description" content="Manage Northstar Medical appointments.">
+    <title>Appointments | Northstar Medical</title>
+    <link rel="stylesheet" href="/css/style.css">
+    <script src="/js/common.js" defer></script>
+    <script src="/js/admin.js" defer></script>
+  </head>
+  <body class="dashboard-page">
+    <header class="admin-header">
+      <a class="brand" href="/" aria-label="Northstar Medical home"><span class="brand-mark" aria-hidden="true">N</span><span><strong>Northstar</strong><small>MEDICAL CENTER</small></span></a>
+      <div class="admin-header-right"><span class="staff-label"><span class="status-dot"></span> ADMIN PORTAL</span><button class="button button-outline button-small" id="logout-button" type="button">Sign out <span aria-hidden="true">↗</span></button></div>
+    </header>
+    <main class="dashboard-main">
+      <div class="dashboard-heading"><div><p class="eyebrow"><span class="eyebrow-line"></span> APPOINTMENT MANAGEMENT</p><h1>Good morning<span class="heading-period">.</span></h1><p>Review and manage upcoming care at Northstar.</p></div><div class="today-label"><span class="today-icon" aria-hidden="true">▦</span><span><small>TODAY</small><strong id="today-date"></strong></span></div></div>
+      <section class="summary-grid" id="summary-grid" aria-label="Appointment summary">
+        <article class="summary-item summary-total"><span class="summary-label">TOTAL APPOINTMENTS</span><strong id="count-total">—</strong><span class="summary-note">All records</span><span class="summary-symbol" aria-hidden="true">↗</span></article>
+        <article class="summary-item"><span class="summary-label">PENDING</span><strong id="count-pending">—</strong><span class="summary-note"><span class="mini-dot dot-pending"></span>Needs review</span></article>
+        <article class="summary-item"><span class="summary-label">CONFIRMED</span><strong id="count-confirmed">—</strong><span class="summary-note"><span class="mini-dot dot-confirmed"></span>On the calendar</span></article>
+        <article class="summary-item"><span class="summary-label">COMPLETED</span><strong id="count-completed">—</strong><span class="summary-note"><span class="mini-dot dot-completed"></span>Care delivered</span></article>
+        <article class="summary-item"><span class="summary-label">CANCELLED</span><strong id="count-cancelled">—</strong><span class="summary-note"><span class="mini-dot dot-cancelled"></span>Not active</span></article>
+      </section>
+      <section class="appointments-section" aria-labelledby="appointments-title">
+        <div class="appointments-title-row"><div><p class="eyebrow"><span class="eyebrow-line"></span> SCHEDULING</p><h2 id="appointments-title">Appointments</h2></div><button class="icon-button" id="refresh-button" type="button" aria-label="Refresh appointments" title="Refresh">↻</button></div>
+        <form class="filter-bar" id="filter-form">
+          <label class="search-field"><span aria-hidden="true">⌕</span><input id="search" name="search" type="search" placeholder="Search name or reference" aria-label="Search name or booking reference"></label>
+          <label class="filter-select"><span class="sr-only">Filter by provider</span><select id="filter-provider" name="providerId"><option value="">All providers</option></select></label>
+          <label class="filter-select"><span class="sr-only">Filter by status</span><select id="filter-status" name="status"><option value="">All statuses</option><option>Pending</option><option>Confirmed</option><option>Completed</option><option>Cancelled</option></select></label>
+          <label class="filter-date"><span class="sr-only">Filter by date</span><input id="filter-date" name="date" type="date" aria-label="Filter by appointment date"></label>
+          <button class="button button-outline filter-reset" type="reset">Clear</button>
+        </form>
+        <div class="table-meta"><span id="result-count">Loading appointments…</span><span class="table-tip"><span class="mini-dot dot-pending"></span> Pending requests need review</span></div>
+        <div class="table-scroll" role="region" aria-label="Appointments table" tabindex="0">
+          <table class="appointments-table"><thead><tr><th scope="col">PATIENT</th><th scope="col">PROVIDER / SERVICE</th><th scope="col">DATE &amp; TIME</th><th scope="col">REFERENCE</th><th scope="col">STATUS</th><th scope="col"><span class="sr-only">Actions</span></th></tr></thead><tbody id="appointments-body"><tr><td colspan="6" class="table-empty">Loading appointments…</td></tr></tbody></table>
+        </div>
+        <div class="table-footer"><span id="page-label"></span><div class="pagination-controls"><button class="icon-button" id="previous-page" type="button" aria-label="Previous page" disabled>←</button><button class="icon-button" id="next-page" type="button" aria-label="Next page" disabled>→</button></div></div>
+      </section>
+    </main>
+    <div class="toast-region" id="toast-region" aria-live="polite" aria-atomic="true"></div>
+  </body>
+</html>
